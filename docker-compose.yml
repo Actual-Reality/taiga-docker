@@ -27,6 +27,26 @@ x-environment:
   RABBITMQ_PASS: "${RABBITMQ_PASS}"
   # Telemetry settings
   ENABLE_TELEMETRY: "${ENABLE_TELEMETRY}"
+  # Github settings
+  ENABLE_GITHUB_AUTH: "True"
+  GITHUB_API_CLIENT_ID: "${GITHUB_API_CLIENT_ID}"
+  GITHUB_API_CLIENT_SECRET: "${GITHUB_API_CLIENT_SECRET}"
+  ENABLE_GITHUB_IMPORTER: "True"
+  GITHUB_IMPORTER_CLIENT_ID: "${GITHUB_IMPORTER_CLIENT_ID}"
+  GITHUB_IMPORTER_CLIENT_SECRET: "${GITHUB_IMPORTER_CLIENT_SECRET}"
+  # Public register settings
+  PUBLIC_REGISTER_ENABLED: "True"
+  # Slack settings
+  ENABLE_SLACK: "True"
+  # JIRA settings
+  ENABLE_JIRA_IMPORTER: "True"
+  JIRA_IMPORTER_CONSUMER_KEY: "${JIRA_IMPORTER_CONSUMER_KEY}"
+  JIRA_IMPORTER_CERT: "${JIRA_IMPORTER_CERT}"
+  JIRA_IMPORTER_PUB_CERT: "${JIRA_IMPORTER_PUB_CERT}"
+  # Trello settings
+  ENABLE_TRELLO_IMPORTER: "True"
+  TRELLO_IMPORTER_API_KEY: "${TRELLO_IMPORTER_API_KEY}"
+  TRELLO_IMPORTER_SECRET_KEY: "${TRELLO_IMPORTER_SECRET_KEY}"
   # ...your customizations go here
 
 x-volumes:
@@ -102,6 +122,18 @@ services:
       TAIGA_URL: "${TAIGA_SCHEME}://${TAIGA_DOMAIN}"
       TAIGA_WEBSOCKETS_URL: "${WEBSOCKETS_SCHEME}://${TAIGA_DOMAIN}"
       TAIGA_SUBPATH: "${SUBPATH}"
+      # Github settings
+      ENABLE_GITHUB_AUTH: "true"
+      ENABLE_GITHUB_IMPORTER: "true"
+      GITHUB_CLIENT_ID: "${GITHUB_CLIENT_ID}"
+      # Public register settings
+      PUBLIC_REGISTER_ENABLED: "true"
+      # Jira settings
+      ENABLE_JIRA_IMPORTER: "true"
+      # Slack settings
+      ENABLE_SLACK: "true"
+      # Trello settings
+      ENABLE_TRELLO_IMPORTER: "true"
       # ...your customizations go here
     networks:
       - taiga
